@@ -1,304 +1,208 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Meu Cabelo | Cuidados e Texturas</title>
-  <style>
-    /* --- VARIÁVEIS DE CORES NUDE --- */
-    :root {
-      --bg-main: #f9f6f0;
-      --bg-card: #f2ebe1;
-      --accent: #b3927d;
-      --accent-hover: #967460;
-      --text-dark: #4a3e3d;
-      --text-muted: #7a6e6b;
-      --white: #ffffff;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glow Hair Collective</title>
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f8f5f2;
+}
 
-    body {
-      background-color: var(--bg-main);
-      color: var(--text-dark);
-      line-height: 1.6;
-    }
+header{
+    background:#fff;
+    padding:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 2px 5px rgba(0,0,0,.1);
+}
 
-    /* --- NAVEGAÇÃO --- */
-    header {
-      background-color: var(--white);
-      padding: 1.5rem 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-    }
+.logo{
+    font-size:32px;
+    font-weight:bold;
+}
 
-    .logo {
-      font-size: 1.8rem;
-      letter-spacing: 3px;
-      font-weight: 300;
-      color: var(--text-dark);
-      text-transform: uppercase;
-    }
+nav a{
+    text-decoration:none;
+    color:#333;
+    margin:0 15px;
+}
 
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 2rem;
-    }
+.hero{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:60px;
+    background:#efe5dc;
+}
 
-    nav a {
-      text-decoration: none;
-      color: var(--text-dark);
-      font-weight: 500;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: color 0.3s;
-    }
+.hero-text{
+    max-width:500px;
+}
 
-    nav a:hover {
-      color: var(--accent);
-    }
+.hero h1{
+    font-size:48px;
+}
 
-    /* --- HERO SECTION --- */
-    .hero {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 4rem 5%;
-      gap: 2rem;
-      background: linear-gradient(135deg, var(--bg-main) 0%, var(--bg-card) 100%);
-    }
+.hero p{
+    font-size:18px;
+    color:#555;
+}
 
-    .hero-text {
-      flex: 1;
-      max-width: 500px;
-    }
+button{
+    padding:15px 30px;
+    background:#4b3428;
+    color:white;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+}
 
-    .hero-text h1 {
-      font-size: 2.8rem;
-      font-weight: 300;
-      letter-spacing: 2px;
-      margin-bottom: 1rem;
-      color: var(--text-dark);
-      text-transform: uppercase;
-    }
+.products{
+    padding:50px;
+}
 
-    .hero-text p {
-      color: var(--text-muted);
-      margin-bottom: 2rem;
-      font-size: 1.1rem;
-    }
+.products h2{
+    text-align:center;
+}
 
-    .btn {
-      display: inline-block;
-      padding: 0.8rem 2rem;
-      background-color: var(--accent);
-      color: var(--white);
-      text-decoration: none;
-      border-radius: 25px;
-      text-transform: uppercase;
-      font-size: 0.85rem;
-      letter-spacing: 1px;
-      transition: background-color 0.3s;
-      border: none;
-      cursor: pointer;
-    }
+.grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
 
-    .btn:hover {
-      background-color: var(--accent-hover);
-    }
+.card{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+}
 
-    .hero-image {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-    }
+.card img{
+    width:100%;
+    border-radius:10px;
+}
 
-    .hero-image img {
-      width: 100%;
-      max-width: 550px;
-      border-radius: 20px;
-      object-fit: cover;
-    }
+.blog{
+    padding:50px;
+}
 
-    /* --- SEÇÕES GERAIS --- */
-    section {
-      padding: 4rem 5%;
-    }
+.article{
+    display:flex;
+    background:white;
+    margin-bottom:20px;
+    border-radius:15px;
+    overflow:hidden;
+}
 
-    .section-title {
-      text-align: center;
-      font-size: 1.8rem;
-      font-weight: 300;
-      letter-spacing: 2px;
-      margin-bottom: 3rem;
-      text-transform: uppercase;
-    }
+.article img{
+    width:220px;
+}
 
-    /* --- CARDS DE TEXTURAS --- */
-    .grid-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2rem;
-    }
+.article-content{
+    padding:20px;
+}
 
-    .card {
-      background-color: var(--white);
-      padding: 1.5rem;
-      border-radius: 15px;
-      text-align: center;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-      transition: transform 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 1rem;
-    }
-
-    .card h3 {
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-      font-weight: 500;
-    }
-
-    .card p {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    /* --- PRODUTOS --- */
-    .products {
-      background-color: var(--bg-card);
-    }
-
-    .price {
-      display: block;
-      margin: 0.5rem 0 1rem 0;
-      font-weight: bold;
-      color: var(--text-dark);
-    }
-
-    /* --- RODAPÉ --- */
-    footer {
-      background-color: var(--text-dark);
-      color: var(--bg-main);
-      text-align: center;
-      padding: 2rem 5%;
-      font-size: 0.9rem;
-    }
-
-    /* --- RESPONSIVIDADE --- */
-    @media (max-width: 768px) {
-      .hero {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      nav ul {
-        display: none; /* Em produção, adicione um menu hambúrguer */
-      }
-
-      .hero-text h1 {
-        font-size: 2rem;
-      }
-    }
-  </style>
+footer{
+    background:#fff;
+    text-align:center;
+    padding:30px;
+}
+</style>
 </head>
+
 <body>
 
-  <header>
-    <div class="logo">Meu Cabelo</div>
-    <nav>
-      <ul>
-        <li><a href="#">Início</a></li>
-        <li><a href="#">Cuidados</a></li>
-        <li><a href="#">Produtos</a></li>
-        <li><a href="#">Texturas</a></li>
-        <li><a href="#">Contato</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+<div class="logo">GLOW Hair Collective</div>
 
-  <section class="hero">
-    <div class="hero-text">
-      <h1>Descubra a beleza do seu cabelo</h1>
-      <p>Cuidados personalizados e produtos naturais para todas as texturas de cabelo.</p>
-      <a href="#" class="btn">Explorar Agora</a>
-    </div>
-    <div class="hero-image">
-      <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80" alt="Mulheres sorrindo mostrando diferentes texturas de cabelo" />
-    </div>
-  </section>
+<nav>
+<a href="#">Home</a>
+<a href="#">Shop</a>
+<a href="#">Services</a>
+<a href="#">Tips</a>
+<a href="#">Book Now</a>
+</nav>
+</header>
 
-  <section>
-    <h2 class="section-title">Conheça sua Textura</h2>
-    <div class="grid-container">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=400&q=80" alt="Cabelo Ondulado" />
-        <h3>Cabelo Ondulado</h3>
-        <p>Entenda e ame sua textura natural.</p>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1523824921871-d6f1a15151f1?auto=format&fit=crop&w=400&q=80" alt="Cabelo Cacheado" />
-        <h3>Cabelo Cacheado</h3>
-        <p>Entenda e ame sua textura natural.</p>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1584297091622-af8e5ad6ff22?auto=format&fit=crop&w=400&q=80" alt="Cabelo Crespo" />
-        <h3>Cabelo Crespo</h3>
-        <p>Entenda e ame sua textura natural.</p>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=400&q=80" alt="Cabelo Liso" />
-        <h3>Cabelo Liso</h3>
-        <p>Entenda e ame sua textura natural.</p>
-      </div>
-    </div>
-  </section>
+<section class="hero">
+<div class="hero-text">
+<h1>Discover Your Perfect Hair</h1>
 
-  <section class="products">
-    <h2 class="section-title">Nossos Favoritos</h2>
-    <div class="grid-container">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&w=400&q=80" alt="Shampoo Hidratante" />
-        <h3>Shampoo Hidratante</h3>
-        <span class="price">R$ 89,90</span>
-        <button class="btn">Comprar Agora</button>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1608248597261-e4d094470d90?auto=format&fit=crop&w=400&q=80" alt="Máscara Nutritiva" />
-        <h3>Máscara Nutritiva</h3>
-        <span class="price">R$ 120,00</span>
-        <button class="btn">Comprar Agora</button>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=400&q=80" alt="Creme de Pentear" />
-        <h3>Creme de Pentear</h3>
-        <span class="price">R$ 95,00</span>
-        <button class="btn">Comprar Agora</button>
-      </div>
-    </div>
-  </section>
+<p>
+Find the best products, hair tips, and styles to make you look and feel amazing every day.
+</p>
 
-  <footer>
-    <p>&copy; 2026 Meu Cabelo. Todos os direitos reservados.</p>
-  </footer>
+<button>Explore Our Collection</button>
+</div>
+
+<img src="hero.jpg" alt="Beautiful Hair" width="450">
+</section>
+
+<section class="products">
+
+<h2>Our Best Sellers</h2>
+
+<div class="grid">
+
+<div class="card">
+<img src="shampoo.jpg" alt="">
+<h3>Moisturizing Shampoo</h3>
+<p>$24.99</p>
+</div>
+
+<div class="card">
+<img src="conditioner.jpg" alt="">
+<h3>Keratin Conditioner</h3>
+<p>$26.50</p>
+</div>
+
+<div class="card">
+<img src="oil.jpg" alt="">
+<h3>Hair Shine Oil</h3>
+<p>$31.90</p>
+</div>
+
+<div class="card">
+<img src="cream.jpg" alt="">
+<h3>Curl Defining Cream</h3>
+<p>$27.90</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="blog">
+
+<h2>Hair Essentials: Tips & Trends</h2>
+
+<div class="article">
+<img src="routine.jpg" alt="">
+<div class="article-content">
+<h3>The Ultimate Hair Care Routine</h3>
+<p>Learn the essential steps to achieve healthy, shiny, and nourished hair.</p>
+</div>
+</div>
+
+<div class="article">
+<img src="styles.jpg" alt="">
+<div class="article-content">
+<h3>Best Hairstyles of the Season</h3>
+<p>Explore trendy hairstyles that will transform your look.</p>
+</div>
+</div>
+
+</section>
+
+<footer>
+<p>© 2024 Glow Hair Collective. All Rights Reserved.</p>
+</footer>
 
 </body>
 </html>
