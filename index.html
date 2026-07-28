@@ -69,4 +69,236 @@
 
     /* --- HERO SECTION --- */
     .hero {
-      display
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4rem 5%;
+      gap: 2rem;
+      background: linear-gradient(135deg, var(--bg-main) 0%, var(--bg-card) 100%);
+    }
+
+    .hero-text {
+      flex: 1;
+      max-width: 500px;
+    }
+
+    .hero-text h1 {
+      font-size: 2.8rem;
+      font-weight: 300;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+      text-transform: uppercase;
+    }
+
+    .hero-text p {
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      background-color: var(--accent);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 25px;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      transition: background-color 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: var(--accent-hover);
+    }
+
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 550px;
+      border-radius: 20px;
+      object-fit: cover;
+    }
+
+    /* --- SEÇÕES GERAIS --- */
+    section {
+      padding: 4rem 5%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: 300;
+      letter-spacing: 2px;
+      margin-bottom: 3rem;
+      text-transform: uppercase;
+    }
+
+    /* --- CARDS DE TEXTURAS --- */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background-color: var(--white);
+      padding: 1.5rem;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* --- PRODUTOS --- */
+    .products {
+      background-color: var(--bg-card);
+    }
+
+    .price {
+      display: block;
+      margin: 0.5rem 0 1rem 0;
+      font-weight: bold;
+      color: var(--text-dark);
+    }
+
+    /* --- RODAPÉ --- */
+    footer {
+      background-color: var(--text-dark);
+      color: var(--bg-main);
+      text-align: center;
+      padding: 2rem 5%;
+      font-size: 0.9rem;
+    }
+
+    /* --- RESPONSIVIDADE --- */
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav ul {
+        display: none; /* Em produção, adicione um menu hambúrguer */
+      }
+
+      .hero-text h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Meu Cabelo</div>
+    <nav>
+      <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Cuidados</a></li>
+        <li><a href="#">Produtos</a></li>
+        <li><a href="#">Texturas</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Descubra a beleza do seu cabelo</h1>
+      <p>Cuidados personalizados e produtos naturais para todas as texturas de cabelo.</p>
+      <a href="#" class="btn">Explorar Agora</a>
+    </div>
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80" alt="Mulheres sorrindo mostrando diferentes texturas de cabelo" />
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Conheça sua Textura</h2>
+    <div class="grid-container">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=400&q=80" alt="Cabelo Ondulado" />
+        <h3>Cabelo Ondulado</h3>
+        <p>Entenda e ame sua textura natural.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1523824921871-d6f1a15151f1?auto=format&fit=crop&w=400&q=80" alt="Cabelo Cacheado" />
+        <h3>Cabelo Cacheado</h3>
+        <p>Entenda e ame sua textura natural.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1584297091622-af8e5ad6ff22?auto=format&fit=crop&w=400&q=80" alt="Cabelo Crespo" />
+        <h3>Cabelo Crespo</h3>
+        <p>Entenda e ame sua textura natural.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=400&q=80" alt="Cabelo Liso" />
+        <h3>Cabelo Liso</h3>
+        <p>Entenda e ame sua textura natural.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="products">
+    <h2 class="section-title">Nossos Favoritos</h2>
+    <div class="grid-container">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&w=400&q=80" alt="Shampoo Hidratante" />
+        <h3>Shampoo Hidratante</h3>
+        <span class="price">R$ 89,90</span>
+        <button class="btn">Comprar Agora</button>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1608248597261-e4d094470d90?auto=format&fit=crop&w=400&q=80" alt="Máscara Nutritiva" />
+        <h3>Máscara Nutritiva</h3>
+        <span class="price">R$ 120,00</span>
+        <button class="btn">Comprar Agora</button>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=400&q=80" alt="Creme de Pentear" />
+        <h3>Creme de Pentear</h3>
+        <span class="price">R$ 95,00</span>
+        <button class="btn">Comprar Agora</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Meu Cabelo. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>
